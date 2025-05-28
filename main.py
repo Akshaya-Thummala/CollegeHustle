@@ -1,45 +1,20 @@
 import streamlit as st
-import json
-import os
-
-def run_Normal_mode():
-    st.write("Normal mode is running...")
-
-def run_Telugu_mode():
-    st.write("Telugu mode is running...")
-
-def run_Quest_mode():
-    st.write("Quest mode is running...")
-
-def get_topic_content(subject,topic):
-    with open("data/answers.json","r") as f:
-        data = json.load(f)
-    return(data.get(subject,{}).get(topic,[]))
-
-def find_best_match(doubt,content_list):
-    doubt.lower()
-    best_match=None
-    max_matches=0
-    for item in content_list:
-        matches = sum(1 for keywords in item["keywords"] if keywords in doubt)
-        if matches > max_matches:
-            max_matches = matches
-            best_match = item
-    return best_match
-
+from app.modes.normal_mode import run_normal_mode
+from app.modes.telugu_mode import run_telugu_mode
+from app.modes.quest_mode import run_quest_mode
 st.title("CollegeHustle 🚀")
 
 mode = st.radio("Choose a mode:", ['Normal mode','Telugu mode','Quest mode'])
 st.write(f"You chose: {mode}")
 
 if mode == "Normal mode":
-    run_Normal_mode()
+    run_normal_mode()
 
 if mode == "Telugu mode":
-    run_Telugu_mode()
+    run_telugu_mode()
 
 if mode == "Quest mode":
-    run_Quest_mode()
+    run_quest_mode()
 
 subjects = { "Programming for Problem Solving": ["Algorithms and Flow Charts","Data Types","Variables and Constants",
                                                  "Operators","Control Statements","Functions"],
