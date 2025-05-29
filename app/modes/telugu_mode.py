@@ -21,19 +21,21 @@ def run_telugu_mode():
             return
         else:
             doubt = st.text_area("Confused? Ask your doubt here")
-            
-            if doubt.strip():
-                best = find_best_match(doubt,content_list)
 
-                if best:
-                    st.markdown(f"**Q: {best['q']}**")
-                    st.divider()
-                    st.markdown(f"👉{best['a']['telugu']}")
+            if st.button("Get Answer"):
+            
+                if doubt.strip():
+                    best = find_best_match(doubt,content_list)
+
+                    if best:
+                        st.markdown(f"**Q: {best['q']}**")
+                        st.divider()
+                        st.markdown(f"👉{best['a']['telugu']}")
+                    else:
+                        st.warning("Couldn't find a good match. Try rephrasing your doubt.")
                 else:
-                    st.warning("Couldn't find a good match. Try rephrasing your doubt.")
-            else:
-                st.info("No doubt entered. Showing all available Q&A in this topic:")
-                for qa in content_list:
-                    st.markdown(f"**Q: {qa['q']}**")
-                    st.markdown(f"👉{qa['a']['telugu']}")
-                    st.divider()
+                    st.info("No doubt entered. Showing all available Q&A in this topic:")
+                    for qa in content_list:
+                        st.markdown(f"**Q: {qa['q']}**")
+                        st.markdown(f"👉{qa['a']['telugu']}")
+                        st.divider()

@@ -2,7 +2,7 @@ import json
 
 def load_all_data():
     try:
-        with open("data/answers.json","r") as f:
+        with open("data/answers.json","r",encoding='utf-8-sig') as f:
             data = json.load(f)
             return data
     except FileNotFoundError:
@@ -12,7 +12,7 @@ def load_all_data():
 
 def get_topic_content(subject,topic):
     try:
-        with open("data/answers.json","r") as f:
+        with open("data/answers.json","r",encoding='utf-8-sig') as f:
             data = json.load(f)
             return(data.get(subject,{}).get(topic,[]))
     except FileNotFoundError:
@@ -29,6 +29,6 @@ def find_best_match(doubt,content_list):
         if matches > max_matches:
             max_matches = matches
             best_match = item
-    if max_matches <= 1:
+    if max_matches < 1:
         return None
     return best_match
