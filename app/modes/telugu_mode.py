@@ -3,7 +3,7 @@ import json
 from app.helpers.data_loader import get_topic_content, find_best_match, load_all_data
 
 def run_telugu_mode():
-    st.write("🎭 Telugu - fun mode activated!")
+    st.markdown("<h4 style='color:#FFC107;'>🎭 Telugu - fun mode activated!</h4>", unsafe_allow_html=True)
 
     data = load_all_data()
 
@@ -22,7 +22,7 @@ def run_telugu_mode():
         else:
             doubt = st.text_area("Confused? Ask your doubt here")
 
-            if st.button("Get Answer"):
+            if st.button("🔍 Get Answer"):
             
                 if doubt.strip():
                     best = find_best_match(doubt,content_list)
@@ -34,7 +34,7 @@ def run_telugu_mode():
                     else:
                         st.warning("Couldn't find a good match. Try rephrasing your doubt.")
                 else:
-                    st.info("No doubt entered. Showing all available Q&A in this topic:")
+                    st.info("ℹ️ No doubt entered. Showing all available Q&A in this topic:")
                     for qa in content_list:
                         st.markdown(f"**Q: {qa['q']}**")
                         st.markdown(f"👉{qa['a']['telugu']}")
