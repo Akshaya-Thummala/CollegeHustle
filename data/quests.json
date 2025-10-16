@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "title": "C Code Crusader",
+    "badge": "C Prodigy",
+    "motivational_line": "Master C, master logic!",
+    "reward": 20,
+    "questions": [
+      {
+        "q": "What is the size of int in C?",
+        "options": ["2 bytes", "4 bytes", "Depends on compiler", "8 bytes"],
+        "answer": "Depends on compiler",
+        "hint": "It can vary based on system architecture."
+      },
+      {
+        "q": "Which symbol is used for comments in C?",
+        "options": ["//", "/* */", "#", "<!-- -->"],
+        "answer": "/* */",
+        "hint": "Block comments use /* */"
+      },
+      {
+        "q": "What is the correct way to declare a pointer?",
+        "options": ["int *ptr;", "int ptr*;", "int &ptr;", "pointer ptr;"],
+        "answer": "int *ptr;",
+        "hint": "Use * before variable name."
+      },
+      {
+        "q": "Which function is used to allocate memory dynamically?",
+        "options": ["malloc()", "alloc()", "memalloc()", "new()"],
+        "answer": "malloc()",
+        "hint": "Standard C library function."
+      },
+      {
+        "q": "What does 'sizeof' operator return?",
+        "options": ["Memory in KB", "Memory in bytes", "Number of elements", "Data type size"],
+        "answer": "Memory in bytes",
+        "hint": "Use to check storage size."
+      },
+      {
+        "q": "Which loop executes at least once?",
+        "options": ["for", "while", "do-while", "None"],
+        "answer": "do-while",
+        "hint": "Condition is checked after the first iteration."
+      },
+      {
+        "q": "How do you stop a loop prematurely?",
+        "options": ["exit", "break", "stop", "continue"],
+        "answer": "break",
+        "hint": "Used to exit loop immediately."
+      },
+      {
+        "q": "Which header file contains printf()?",
+        "options": ["stdio.h", "conio.h", "stdlib.h", "string.h"],
+        "answer": "stdio.h",
+        "hint": "Standard input-output header."
+      },
+      {
+        "q": "What is the output of printf(\"%d\", 5/2); ?",
+        "options": ["2.5", "2", "3", "Error"],
+        "answer": "2",
+        "hint": "Integer division truncates decimal."
+      },
+      {
+        "q": "Which is a valid identifier?",
+        "options": ["int", "2value", "_value", "float"],
+        "answer": "_value",
+        "hint": "Identifiers can't start with a number or be reserved keywords."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Java Journey",
+    "badge": "Java Jedi",
+    "motivational_line": "Code smart, compile smarter!",
+    "reward": 20,
+    "questions": [
+      {
+        "q": "Which keyword is used to inherit a class?",
+        "options": ["implements", "extends", "inherits", "super"],
+        "answer": "extends",
+        "hint": "Used for class inheritance."
+      },
+      {
+        "q": "Which is the entry point of a Java program?",
+        "options": ["main()", "start()", "run()", "init()"],
+        "answer": "main()",
+        "hint": "Signature: public static void main(String[] args)"
+      },
+      {
+        "q": "Which operator is used for comparison?",
+        "options": ["=", "==", "!=", "<>"],
+        "answer": "==",
+        "hint": "Single = is assignment."
+      },
+      {
+        "q": "Which is a wrapper class for int?",
+        "options": ["Integer", "Int", "Float", "Double"],
+        "answer": "Integer",
+        "hint": "Wrapper classes allow objects for primitives."
+      },
+      {
+        "q": "What is the default value of boolean?",
+        "options": ["true", "false", "0", "null"],
+        "answer": "false",
+        "hint": "Default for uninitialized boolean is false."
+      },
+      {
+        "q": "Which keyword prevents method overriding?",
+        "options": ["final", "static", "private", "protected"],
+        "answer": "final",
+        "hint": "Used to lock methods."
+      },
+      {
+        "q": "Which method is used to start a thread?",
+        "options": ["run()", "start()", "execute()", "init()"],
+        "answer": "start()",
+        "hint": "Do not call run() directly to start new thread."
+      },
+      {
+        "q": "Which is not a Java access modifier?",
+        "options": ["public", "private", "friendly", "protected"],
+        "answer": "friendly",
+        "hint": "Default access has no keyword."
+      },
+      {
+        "q": "Which exception is checked at compile time?",
+        "options": ["IOException", "ArithmeticException", "NullPointerException", "ArrayIndexOutOfBoundsException"],
+        "answer": "IOException",
+        "hint": "Checked exceptions must be handled or declared."
+      },
+      {
+        "q": "Which method compares string content?",
+        "options": ["==", "equals()", "compare()", "match()"],
+        "answer": "equals()",
+        "hint": "== compares reference, not content."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Python Powerhouse",
+    "badge": "Python Pro",
+    "motivational_line": "Code fast, think smart!",
+    "reward": 20,
+    "questions": [
+      {
+        "q": "What is the output of print(type([]))?",
+        "options": ["list", "tuple", "dict", "array"],
+        "answer": "list",
+        "hint": "[] denotes a list."
+      },
+      {
+        "q": "Which keyword defines a function?",
+        "options": ["func", "def", "function", "lambda"],
+        "answer": "def",
+        "hint": "Use def function_name():"
+      },
+      {
+        "q": "Which operator is used for exponentiation?",
+        "options": ["^", "**", "exp()", "pow()"],
+        "answer": "**",
+        "hint": "a ** b means a raised to power b."
+      },
+      {
+        "q": "What is the output of len('Python')?",
+        "options": ["5", "6", "7", "Error"],
+        "answer": "6",
+        "hint": "Counts characters."
+      },
+      {
+        "q": "Which data type is immutable?",
+        "options": ["list", "tuple", "dict", "set"],
+        "answer": "tuple",
+        "hint": "Cannot modify after creation."
+      },
+      {
+        "q": "How do you start a comment in Python?",
+        "options": ["//", "#", "/*", "<!--"],
+        "answer": "#",
+        "hint": "Single-line comment uses #."
+      },
+      {
+        "q": "What is the output of 3//2?",
+        "options": ["1.5", "1", "2", "Error"],
+        "answer": "1",
+        "hint": "Integer division truncates."
+      },
+      {
+        "q": "Which keyword is used for exception handling?",
+        "options": ["try", "catch", "handle", "except"],
+        "answer": "try",
+        "hint": "Followed by except block."
+      },
+      {
+        "q": "How to create a dictionary?",
+        "options": ["{}", "[]", "()", "<>"],
+        "answer": "{}",
+        "hint": "Key-value pairs use curly braces."
+      },
+      {
+        "q": "Which keyword defines an anonymous function?",
+        "options": ["def", "lambda", "func", "anon"],
+        "answer": "lambda",
+        "hint": "Used for single-line functions."
+      }
+    ]
+  }
+]
