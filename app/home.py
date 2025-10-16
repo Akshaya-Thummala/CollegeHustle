@@ -1,64 +1,68 @@
 import streamlit as st
-from .modes import normal_mode as normal
-from .modes import telugu_mode as telugu
-from .modes import quest_mode as quest
-from .helpers.user_data_loader import load_all_users, save_all_users
+from .style import load_styles
+from .ui.components import app_banner, styled_card
+from .modes import normal_mode, telugu_mode, quest_mode
 
 def show():
-    st.markdown("<h3 style='color:#4CAF50;'>Your study wingman — because textbooks don’t high-five you. ✋🎓</h3>", unsafe_allow_html=True)
-    
-    users_data = load_all_users()
+    """Renders the main home page or the selected learning mode."""
+    # Load custom CSS styles
+    load_styles()
 
-    if 'mode' not in st.session_state:
-        st.session_state.mode = None
-    
-    username = st.session_state.get("username","Guest")
-    user_data = users_data.get(username, {
-        "xp": 0,
-        "badges": [],
-        "streak": 0,
-        "last_login": "2025-06-01",
-        "quests_completed": []
-    })
+    # If a mode is selected, run it and display a back button
+    if 'mode' in st.session_state and st.session_state.mode:
+        
+        # Central column for the back button for better visibility
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            if st.button("🔙 Back to Home"):
+                st.session_state.mode = None
+                st.rerun()
 
-    if st.session_state.mode is None:
-        st.markdown(f"#### Hello, {username}!")
+        if st.session_state.mode == "Study":
+            normal_mode.run_normal_mode()
+        elif st.session_state.mode == "Meme":
+            telugu_mode.run_telugu_mode()
+        elif st.session_state.mode == "Quest":
+            quest_mode.run_quest_mode()
+        
+    # Otherwise, show the main home page with mode selection
+    else:
+        # Display the main app banner
+        app_banner()
 
-        st.markdown(f"""
-<div style='background-color:#F9F9F9; padding: 15px; border-radius: 10px;'>
-    <p style='color:#212121;'>
-    🌟 <b>XP:</b> {user_data.get("xp",0)} &nbsp;&nbsp; 
-    🏅 <b>Badges:</b> {len(user_data.get("badges",0))} &nbsp;&nbsp;
-    🔥 <b>Streak:</b> {user_data.get("streak",0)}
-    </p>
-</div>
-""", unsafe_allow_html=True)
-    
-        st.markdown("<h4 style='color:#00BCD4;'>🎮 Choose your Mode</h3>", unsafe_allow_html=True)
-        st.markdown("<br>", unsafe_allow_html=True)
+        username = st.session_state.get("username", "Hustler")
+        st.header(f"Welcome back, {username}! 👋")
+        st.subheader("Choose Your Hustle")
+
+        # Create a 3-column layout for the mode selection cards
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            if st.button("📘 Study mode"):
-                st.session_state.mode = "normal"
-        
+            styled_card(
+                icon="📚",
+                title="Study Mode",
+                content="The classic, no-fluff way to learn. Clean Q&A format for quick topic understanding and revision."
+            )
+            if st.button("Start Studying", key="study_mode", use_container_width=True):
+                st.session_state.mode = "Study"
+                st.rerun()
+
         with col2:
-            if st.button("🎭 Telugu mode"):
-                st.session_state.mode = "telugu"
-        
+            styled_card(
+                icon="😂",
+                title="Meme Mode",
+                content="Learn concepts through hilarious Telugu memes and witty slang. Who said studying has to be boring?"
+            )
+            if st.button("Start Laughing", key="meme_mode", use_container_width=True):
+                st.session_state.mode = "Meme"
+                st.rerun()
+
         with col3:
-            if st.button("🎯 Quest mode"):
-                st.session_state.mode = "quest"
-    
-    else:
-        if st.session_state.mode == "normal":
-            normal.run_normal_mode()
-
-        elif st.session_state.mode == "telugu":
-            telugu.run_telugu_mode()
-
-        elif st.session_state.mode == "quest":
-            quest.run_quest_mode()
-        
-        if st.sidebar.button("🔙 Back to Home"):
-            st.session_state.mode = None
+            styled_card(
+                icon="🎯",
+                title="Quest Mode",
+                content="Turn your study session into a game! Complete quests, earn XP, and level up your knowledge."
+            )
+            if st.button("Start Questing", key="quest_mode", use_container_width=True):
+                st.session_state.mode = "Quest"
+                st.rerun()
