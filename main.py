@@ -1,67 +1,87 @@
 import streamlit as st
-import app.home as home
-import app.profile as profile
-import app.settings as settings
+from app import home
+from app import profile
+from app import settings
+from app.helpers.user_data_loader import load_all_users
+from app.style import MINT_GREEN_DARK
 
-st.set_page_config(page_title="CollegeHustle 🚀", layout="wide")
+# --- Page Configuration ---
+st.set_page_config(
+    page_title="CollegeHustle 🚀",
+    page_icon="🎓",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
 
-st.title("CollegeHustle 🚀")
+# --- Sidebar ---
+with st.sidebar:
+    # 1. App Logo and Title
+    st.markdown(
+        f"""
+        <div style="text-align: center;">
+            <h1 style="color: {MINT_GREEN_DARK}; font-weight: 700;">CollegeHustle 🚀</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    st.write("---")
 
-# Initialize selected page in session state
-if 'page' not in st.session_state:
-    st.session_state.page = "Home"
+    # 2. User Information
+    username = st.session_state.get("username", "Guest")
+    all_users = load_all_users()
+    user_data = all_users.get(username, {"xp": 0, "streak": 0})
 
-def set_page(page):
-    st.session_state.page = page
+    st.image("https://placehold.co/100x100/A8E6CF/373737?text=🧑‍🎓", use_column_width=False)
+    st.subheader(f"@{username}")
 
-# Define pages and their labels
+    stat_col1, stat_col2 = st.columns(2)
+    with stat_col1:
+        st.metric(label="⭐ XP", value=user_data.get("xp", 0))
+    with stat_col2:
+        st.metric(label="🔥 Streak", value=user_data.get("streak", 0))
+    
+    st.write("---")
+
+    # 3. Navigation
+    st.header("Navigation")
+    
+    # Initialize session state for page navigation
+    if 'page' not in st.session_state:
+        st.session_state.page = "🏠 Home"
+
+    if st.button("🏠 Home", use_container_width=True):
+        st.session_state.page = "🏠 Home"
+    
+    if st.button("👤 Profile", use_container_width=True):
+        st.session_state.page = "👤 Profile"
+
+    if st.button("⚙️ Settings", use_container_width=True):
+        st.session_state.page = "⚙️ Settings"
+        
+    st.write("---")
+    
+    # 4. About/Footer section
+    st.markdown("""
+    <div style="text-align: center; color: #888;">
+        <small>CollegeHustle | Your Study Wingman</small><br>
+        <small>Made for the Expo with ❤️</small>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# --- Page Rendering ---
+# A dictionary mapping page names to their render functions
 pages = {
     "🏠 Home": home.show,
     "👤 Profile": profile.show,
     "⚙️ Settings": settings.show
 }
 
-# Sidebar buttons for navigation (vertical & clickable)
-st.sidebar.subheader("Navigation")
-for page_name in pages:
-    is_selected = page_name == st.session_state.page
-
-    button_style = """
-        <style>
-        div[data-testid="stSidebar"] button.selected {
-            background-color: #4CAF50 !important;
-            color: white !important;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-        </style>
-    """
-    st.markdown(button_style, unsafe_allow_html=True)
-
-    # Add a unique key so Streamlit doesn’t reuse buttons
-    if st.sidebar.button(page_name, use_container_width=True, key=page_name):
-        st.session_state.page = page_name
-
-    # Highlight the selected button using JS-style class targeting
-    if is_selected:
-        st.markdown(
-            f"""<script>
-            const btns = parent.document.querySelectorAll('button[kind="secondary"]');
-            btns.forEach(btn => {{
-                if (btn.innerText.trim() === "{page_name}") {{
-                    btn.classList.add("selected");
-                }}
-            }});
-            </script>""",
-            unsafe_allow_html=True
-        )
-
-
-if st.session_state.page == "🏠 Home":
-    home.show()
-elif st.session_state.page == "👤 Profile":
-    profile.show()
-elif st.session_state.page == "⚙️ Settings":
-    settings.show()
+# Get the function for the selected page and run it
+page_function = pages.get(st.session_state.page)
+if page_function:
+    page_function()
 else:
-    home.show()                             #default
+    # Default to home page if something goes wrong
+    home.show()
+
