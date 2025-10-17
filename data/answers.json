@@ -20,3 +20,646 @@
         ]
     }
 }
+{
+  "C Programming": {
+    "Basics": [
+      {
+        "q": "What is C language?",
+        "a": {
+          "normal": "C is a general-purpose, structured programming language developed by Dennis Ritchie. It is used to develop system software and application programs.",
+          "telugu": "C ane di oka general-purpose language, Dennis Ritchie create chesadu. System software mariyu apps develop cheyadaniki use chestaru."
+        },
+        "keywords": ["C language", "Dennis Ritchie", "structured", "general purpose"]
+      },
+      {
+        "q": "What are features of C?",
+        "a": {
+          "normal": "C is simple, portable, fast, structured, and has rich library support.",
+          "telugu": "C language simple, portable, fast, structured, mariyu chala libraries support chestundi."
+        },
+        "keywords": ["features", "simple", "portable", "fast"]
+      },
+      {
+        "q": "What is the basic structure of a C program?",
+        "a": {
+          "normal": "A C program has header files, main() function, variable declarations, and statements.",
+          "telugu": "C program lo header files, main() function, variables mariyu statements untayi."
+        },
+        "keywords": ["structure", "main function", "header files"]
+      },
+      {
+        "q": "What is a compiler?",
+        "a": {
+          "normal": "A compiler converts source code into machine code that the computer can execute.",
+          "telugu": "Compiler ante manam rayina code ni computer ki ardham ayye machine code ga marchestundi."
+        },
+        "keywords": ["compiler", "machine code", "translation"]
+      },
+      {
+        "q": "What is the use of #include?",
+        "a": {
+          "normal": "#include is used to add header files to a program so we can use predefined functions.",
+          "telugu": "#include valla manam header files ni add chesi, already ready functions ni use cheyyachu."
+        },
+        "keywords": ["include", "header files", "preprocessor"]
+      }
+    ],
+    "Control Structures": [
+      {
+        "q": "What are control statements?",
+        "a": {
+          "normal": "Control statements decide the flow of execution in a program (like if, switch, loops).",
+          "telugu": "Control statements program lo execution direction ni decide chestayi, if, switch, loops laaga."
+        },
+        "keywords": ["control statements", "if", "switch", "loops"]
+      },
+      {
+        "q": "What is an if statement?",
+        "a": {
+          "normal": "The if statement executes a block of code only if a given condition is true.",
+          "telugu": "if statement condition true aithe matrame code run avutundi."
+        },
+        "keywords": ["if statement", "condition", "decision"]
+      },
+      {
+        "q": "What is a loop?",
+        "a": {
+          "normal": "A loop is used to repeat a set of statements multiple times until a condition fails.",
+          "telugu": "Loop ante condition false ayye varaku same steps repeat chestundi."
+        },
+        "keywords": ["loop", "for", "while", "do while"]
+      },
+      {
+        "q": "Difference between while and do-while loop?",
+        "a": {
+          "normal": "In while, condition is checked before execution; in do-while, condition is checked after execution.",
+          "telugu": "while loop lo check mundu jarugutundi, do-while lo check tarvata jarugutundi."
+        },
+        "keywords": ["while", "do while", "difference"]
+      },
+      {
+        "q": "What is a switch statement?",
+        "a": {
+          "normal": "A switch is used to perform different actions based on different values of an expression.",
+          "telugu": "Switch statement expression value batti different actions perform chestundi."
+        },
+        "keywords": ["switch", "case", "control flow"]
+      }
+    ],
+    "Functions": [
+      {
+        "q": "What is a function in C?",
+        "a": {
+          "normal": "A function is a block of code that performs a specific task and can be reused.",
+          "telugu": "Function ante oka task cheyyadaniki tayaraina code block, danini malli use cheyyachu."
+        },
+        "keywords": ["function", "block", "reuse"]
+      },
+      {
+        "q": "What is the difference between user-defined and built-in functions?",
+        "a": {
+          "normal": "User-defined functions are created by programmers, while built-in are predefined in libraries.",
+          "telugu": "User-defined ante manam create chesina functions, built-in ante already library lo unna functions."
+        },
+        "keywords": ["user-defined", "built-in", "functions"]
+      },
+      {
+        "q": "Why use functions?",
+        "a": {
+          "normal": "Functions reduce code repetition, improve readability, and help in debugging.",
+          "telugu": "Functions valla code easy ga ardham avtundi, malli malli rayyadam avasaram ledu."
+        },
+        "keywords": ["functions", "advantages", "modularity"]
+      },
+      {
+        "q": "What is recursion?",
+        "a": {
+          "normal": "Recursion is when a function calls itself to solve smaller parts of a problem.",
+          "telugu": "Recursion ante function tana lopale tana ni call chesukuni problem ni solve cheyyadam."
+        },
+        "keywords": ["recursion", "function", "self call"]
+      },
+      {
+        "q": "What is the return type of main()?",
+        "a": {
+          "normal": "The return type of main() is int, which returns a value to the operating system.",
+          "telugu": "main() function ki return type int, adi OS ki oka value return chestundi."
+        },
+        "keywords": ["main", "return", "int"]
+      }
+    ],
+    "Arrays": [
+      {
+        "q": "What is an array?",
+        "a": {
+          "normal": "An array is a collection of similar data types stored in contiguous memory locations.",
+          "telugu": "Array ante same type values ni side by side memory lo store cheyyadam."
+        },
+        "keywords": ["array", "data types", "memory"]
+      },
+      {
+        "q": "What are the types of arrays?",
+        "a": {
+          "normal": "There are one-dimensional and multi-dimensional arrays in C.",
+          "telugu": "C lo one-dimensional mariyu multi-dimensional arrays untayi."
+        },
+        "keywords": ["array types", "1D", "2D"]
+      },
+      {
+        "q": "How to access array elements?",
+        "a": {
+          "normal": "Array elements are accessed using their index number starting from 0.",
+          "telugu": "Array elements ni index number (0 nundi start ayi) to access chestam."
+        },
+        "keywords": ["index", "array access"]
+      },
+      {
+        "q": "What is a 2D array?",
+        "a": {
+          "normal": "2D array stores data in rows and columns, like a table.",
+          "telugu": "2D array ante rows mariyu columns lo data store cheyyadam, table laaga."
+        },
+        "keywords": ["2D array", "matrix", "rows columns"]
+      },
+      {
+        "q": "How are arrays passed to functions?",
+        "a": {
+          "normal": "Arrays are passed by reference, meaning only the address is passed.",
+          "telugu": "Array ni function ki pass chestapudu, address matrame pampistam."
+        },
+        "keywords": ["array", "pass by reference"]
+      }
+    ],
+    "Pointers": [
+      {
+        "q": "What is a pointer?",
+        "a": {
+          "normal": "A pointer is a variable that stores the address of another variable.",
+          "telugu": "Pointer ante vere variable yokka address ni store chesina variable."
+        },
+        "keywords": ["pointer", "address", "variable"]
+      },
+      {
+        "q": "What is the use of & and * operators?",
+        "a": {
+          "normal": "& gives address, * gives value stored at that address.",
+          "telugu": "& ante address, * ante a address lo unna value ni istundi."
+        },
+        "keywords": ["&", "*", "address operator"]
+      },
+      {
+        "q": "What is NULL pointer?",
+        "a": {
+          "normal": "A pointer that doesn’t point to any memory location is a NULL pointer.",
+          "telugu": "Yekkada ki point cheyyani pointer ni NULL pointer antaru."
+        },
+        "keywords": ["null pointer", "memory", "address"]
+      },
+      {
+        "q": "Can we have pointer to pointer?",
+        "a": {
+          "normal": "Yes, it’s called a double pointer and stores the address of another pointer.",
+          "telugu": "Avunu, double pointer ani antaru, adi inkoka pointer address ni store chestundi."
+        },
+        "keywords": ["pointer to pointer", "double pointer"]
+      },
+      {
+        "q": "What is dynamic memory allocation?",
+        "a": {
+          "normal": "It allows memory to be allocated during program execution using malloc, calloc, free, realloc.",
+          "telugu": "Program run avthunna time lo memory allocate cheyyadam dynamic allocation antaru (malloc, calloc laanti functions)."
+        },
+        "keywords": ["malloc", "calloc", "free", "realloc"]
+      }
+    ]
+  }
+}
+{
+  "Python": {
+    "Basics": [
+      {
+        "q": "What is Python?",
+        "a": {
+          "normal": "Python is a high-level, interpreted, and general-purpose programming language known for its simplicity and readability.",
+          "telugu": "Python ane di easy ga ardham ayye, high-level programming language. Manaki simple ga rayadaniki help chestundi."
+        },
+        "keywords": ["Python", "interpreted", "high level"]
+      },
+      {
+        "q": "Who developed Python?",
+        "a": {
+          "normal": "Python was developed by Guido van Rossum in 1991.",
+          "telugu": "Python ni 1991 lo Guido van Rossum ane vyakti create chesadu."
+        },
+        "keywords": ["Guido van Rossum", "1991", "creator"]
+      },
+      {
+        "q": "What are the key features of Python?",
+        "a": {
+          "normal": "Python is simple, object-oriented, portable, and supports dynamic typing.",
+          "telugu": "Python simple, object-oriented, portable mariyu dynamic typing ni support chestundi."
+        },
+        "keywords": ["features", "simple", "object-oriented"]
+      },
+      {
+        "q": "What is an interpreter?",
+        "a": {
+          "normal": "An interpreter executes code line by line instead of converting the whole program at once.",
+          "telugu": "Interpreter ante code ni line-by-line run chestundi, compiler laaga okesari kadu."
+        },
+        "keywords": ["interpreter", "execution", "line by line"]
+      },
+      {
+        "q": "What are Python identifiers?",
+        "a": {
+          "normal": "Identifiers are names used to identify variables, functions, or classes.",
+          "telugu": "Identifiers ante variables, functions, classes ki ichina peru lu."
+        },
+        "keywords": ["identifiers", "names", "variables"]
+      }
+    ],
+    "Data Types": [
+      {
+        "q": "What are Python’s basic data types?",
+        "a": {
+          "normal": "Python has int, float, string, list, tuple, dictionary, and set as basic data types.",
+          "telugu": "Python lo int, float, string, list, tuple, dictionary, set laanti data types untayi."
+        },
+        "keywords": ["data types", "int", "float", "list"]
+      },
+      {
+        "q": "What is the difference between list and tuple?",
+        "a": {
+          "normal": "Lists are mutable (can be changed), tuples are immutable (cannot be changed).",
+          "telugu": "List ni marchochu, tuple ni marchalem — simple difference idi."
+        },
+        "keywords": ["list", "tuple", "mutable"]
+      },
+      {
+        "q": "What is a dictionary in Python?",
+        "a": {
+          "normal": "Dictionary stores data in key-value pairs.",
+          "telugu": "Dictionary lo data ni key-value pairs ga store chestam, ante name: value laaga."
+        },
+        "keywords": ["dictionary", "key-value"]
+      },
+      {
+        "q": "What is a set?",
+        "a": {
+          "normal": "Set is an unordered collection of unique elements.",
+          "telugu": "Set ante order lekunda, repeat kakunda unique values store chestundi."
+        },
+        "keywords": ["set", "unique", "unordered"]
+      },
+      {
+        "q": "How to find the data type of a variable?",
+        "a": {
+          "normal": "Use the type() function to find the data type.",
+          "telugu": "Variable type telusukodaniki type() function vadali."
+        },
+        "keywords": ["type()", "data type"]
+      }
+    ],
+    "Control Flow": [
+      {
+        "q": "What are control statements in Python?",
+        "a": {
+          "normal": "They control the order of execution — like if, for, while, break, continue.",
+          "telugu": "Program flow ni control cheyyadaniki if, for, while, break, continue laanti statements use chestam."
+        },
+        "keywords": ["control statements", "if", "for", "while"]
+      },
+      {
+        "q": "What is the syntax of an if statement?",
+        "a": {
+          "normal": "if condition:\n    statements",
+          "telugu": "Syntax ila untundi:\nif condition:\n    statement run avuthundi."
+        },
+        "keywords": ["if statement", "syntax"]
+      },
+      {
+        "q": "What is the difference between break and continue?",
+        "a": {
+          "normal": "break exits the loop, continue skips the current iteration.",
+          "telugu": "break ante loop nundi bayatiki vachesam, continue ante current round skip chestam."
+        },
+        "keywords": ["break", "continue", "loop"]
+      },
+      {
+        "q": "What is a for loop used for?",
+        "a": {
+          "normal": "for loop is used to iterate over sequences like lists or strings.",
+          "telugu": "for loop lists, strings laanti sequences lo repeat cheyyadaniki use chestam."
+        },
+        "keywords": ["for loop", "iteration"]
+      },
+      {
+        "q": "What is a while loop?",
+        "a": {
+          "normal": "while loop runs until a condition becomes false.",
+          "telugu": "while loop condition false avvadu varaku run avtundi."
+        },
+        "keywords": ["while loop", "condition"]
+      }
+    ],
+    "Functions": [
+      {
+        "q": "What is a function in Python?",
+        "a": {
+          "normal": "A function is a block of reusable code defined using the def keyword.",
+          "telugu": "Function ante malli malli use cheyyadaniki block of code, def ane keyword tho define chestam."
+        },
+        "keywords": ["function", "def", "reusable"]
+      },
+      {
+        "q": "What are arguments and parameters?",
+        "a": {
+          "normal": "Parameters are variables in function definition; arguments are values passed to the function.",
+          "telugu": "Parameters ante function lo define chesina names, arguments ante pass chesina real values."
+        },
+        "keywords": ["arguments", "parameters"]
+      },
+      {
+        "q": "What is return statement used for?",
+        "a": {
+          "normal": "It is used to send back a value from a function.",
+          "telugu": "Function nundi value ni return cheyyadaniki return statement vadatam."
+        },
+        "keywords": ["return", "function"]
+      },
+      {
+        "q": "What are lambda functions?",
+        "a": {
+          "normal": "Lambda functions are small anonymous functions defined with the lambda keyword.",
+          "telugu": "Lambda ante short, name lekunda function — lambda ane keyword tho rayadam."
+        },
+        "keywords": ["lambda", "anonymous function"]
+      },
+      {
+        "q": "What is recursion in Python?",
+        "a": {
+          "normal": "When a function calls itself, it’s called recursion.",
+          "telugu": "Function tana lopale tana ni piliste, adi recursion antaru."
+        },
+        "keywords": ["recursion", "function"]
+      }
+    ],
+    "Modules and Libraries": [
+      {
+        "q": "What is a module?",
+        "a": {
+          "normal": "A module is a Python file containing functions or variables that can be reused.",
+          "telugu": "Module ante oka Python file lo unna reusable functions mariyu variables."
+        },
+        "keywords": ["module", "functions", "reuse"]
+      },
+      {
+        "q": "How to import a module?",
+        "a": {
+          "normal": "Use the import statement, e.g., import math.",
+          "telugu": "Module ni import cheyyadaniki import ane statement vadali, e.g., import math."
+        },
+        "keywords": ["import", "module"]
+      },
+      {
+        "q": "What is the difference between import and from-import?",
+        "a": {
+          "normal": "import loads the whole module; from-import loads specific functions.",
+          "telugu": "import ante anta module tisukovadam, from-import ante okati rendu functions matrame."
+        },
+        "keywords": ["import", "from import"]
+      },
+      {
+        "q": "Name some popular Python libraries.",
+        "a": {
+          "normal": "Popular libraries: NumPy, Pandas, Matplotlib, Streamlit.",
+          "telugu": "Popular Python libraries — NumPy, Pandas, Matplotlib, Streamlit."
+        },
+        "keywords": ["NumPy", "Pandas", "Matplotlib"]
+      },
+      {
+        "q": "What is pip?",
+        "a": {
+          "normal": "pip is a package manager for installing Python libraries.",
+          "telugu": "pip ante Python libraries install cheyyadaniki use chese tool."
+        },
+        "keywords": ["pip", "package manager"]
+      }
+    ]
+  }
+}
+{
+  "Java": {
+    "Basics": [
+      {
+        "q": "What is Java?",
+        "a": {
+          "normal": "Java is an object-oriented, platform-independent programming language developed by Sun Microsystems.",
+          "telugu": "Java ane di object-oriented, platform-independent programming language — Sun Microsystems develop chesaru."
+        },
+        "keywords": ["Java", "object-oriented", "platform-independent"]
+      },
+      {
+        "q": "Who developed Java?",
+        "a": {
+          "normal": "Java was developed by James Gosling in 1995.",
+          "telugu": "Java ni 1995 lo James Gosling ane engineer create chesadu."
+        },
+        "keywords": ["James Gosling", "1995"]
+      },
+      {
+        "q": "What is JVM?",
+        "a": {
+          "normal": "JVM (Java Virtual Machine) executes Java bytecode and makes Java platform-independent.",
+          "telugu": "JVM ane di Java bytecode ni execute chestundi — idi Java ni platform-independent chestundi."
+        },
+        "keywords": ["JVM", "bytecode", "platform-independent"]
+      },
+      {
+        "q": "What is JDK?",
+        "a": {
+          "normal": "JDK (Java Development Kit) includes JRE and tools needed for development.",
+          "telugu": "JDK ante Java Development Kit — idi JRE mariyu development tools ni kaligi untundi."
+        },
+        "keywords": ["JDK", "tools", "development"]
+      },
+      {
+        "q": "What is the entry point of a Java program?",
+        "a": {
+          "normal": "The main() method is the entry point of every Java program.",
+          "telugu": "Main() method ane di Java program start ayye chotayi."
+        },
+        "keywords": ["main", "entry point"]
+      }
+    ],
+    "OOP Concepts": [
+      {
+        "q": "What are the main OOP concepts in Java?",
+        "a": {
+          "normal": "The main OOP concepts are Encapsulation, Inheritance, Polymorphism, and Abstraction.",
+          "telugu": "Java lo main OOP concepts — Encapsulation, Inheritance, Polymorphism, Abstraction."
+        },
+        "keywords": ["OOP", "Encapsulation", "Inheritance", "Polymorphism", "Abstraction"]
+      },
+      {
+        "q": "What is a class in Java?",
+        "a": {
+          "normal": "A class is a blueprint that defines the structure and behavior of objects.",
+          "telugu": "Class ante blueprint laga untundi — objects ki structure mariyu behavior define chestundi."
+        },
+        "keywords": ["class", "object", "blueprint"]
+      },
+      {
+        "q": "What is an object?",
+        "a": {
+          "normal": "An object is an instance of a class.",
+          "telugu": "Object ante class yokka real-life instance ani cheppochu."
+        },
+        "keywords": ["object", "instance"]
+      },
+      {
+        "q": "What is encapsulation?",
+        "a": {
+          "normal": "Encapsulation is wrapping data and code together as a single unit.",
+          "telugu": "Encapsulation ante data mariyu methods ni okasari wrap cheyyadam, secret box laga."
+        },
+        "keywords": ["encapsulation", "data hiding"]
+      },
+      {
+        "q": "What is inheritance?",
+        "a": {
+          "normal": "Inheritance allows a class to acquire properties and behaviors of another class.",
+          "telugu": "Inheritance ante okka class inko class features ni inherit cheyyadam, parents nundi traits tesukovadam laga."
+        },
+        "keywords": ["inheritance", "extends", "reusability"]
+      }
+    ],
+    "Inheritance": [
+      {
+        "q": "What keyword is used for inheritance in Java?",
+        "a": {
+          "normal": "The 'extends' keyword is used for inheritance.",
+          "telugu": "Inheritance kosam 'extends' keyword vadatam."
+        },
+        "keywords": ["extends", "inheritance"]
+      },
+      {
+        "q": "What is single inheritance?",
+        "a": {
+          "normal": "In single inheritance, a subclass inherits from one superclass only.",
+          "telugu": "Single inheritance ante okka subclass, okka superclass nundi matrame inherit avvadam."
+        },
+        "keywords": ["single inheritance", "superclass", "subclass"]
+      },
+      {
+        "q": "Does Java support multiple inheritance?",
+        "a": {
+          "normal": "No, Java does not support multiple inheritance through classes to avoid ambiguity.",
+          "telugu": "Java lo multiple inheritance classes tho support cheyyadu — confusion avoid cheyyadaniki."
+        },
+        "keywords": ["multiple inheritance", "ambiguity"]
+      },
+      {
+        "q": "What is method overriding?",
+        "a": {
+          "normal": "When a subclass provides a specific implementation of a method already defined in the parent class.",
+          "telugu": "Parent class lo unna method ni child class lo marala define chesthe, adi overriding."
+        },
+        "keywords": ["overriding", "method", "subclass"]
+      },
+      {
+        "q": "What is 'super' keyword used for?",
+        "a": {
+          "normal": "super is used to access parent class members and constructors.",
+          "telugu": "'super' ane keyword tho parent class members and constructors ni access cheyyachu."
+        },
+        "keywords": ["super", "parent class"]
+      }
+    ],
+    "Exception Handling": [
+      {
+        "q": "What is an exception?",
+        "a": {
+          "normal": "An exception is an event that disrupts the normal flow of a program.",
+          "telugu": "Exception ante program flow ni disturb cheyyedhi, unexpected situation."
+        },
+        "keywords": ["exception", "error"]
+      },
+      {
+        "q": "What is try-catch block used for?",
+        "a": {
+          "normal": "try-catch is used to handle exceptions gracefully without crashing the program.",
+          "telugu": "try-catch block tho program crash kakunda exceptions handle chestam, smooth ga."
+        },
+        "keywords": ["try-catch", "handle", "exception"]
+      },
+      {
+        "q": "What is finally block?",
+        "a": {
+          "normal": "finally block contains code that runs always, whether exception occurs or not.",
+          "telugu": "finally block lo unna code always run avtundi — exception vachina, rakapoyina."
+        },
+        "keywords": ["finally", "always execute"]
+      },
+      {
+        "q": "How to throw an exception manually?",
+        "a": {
+          "normal": "Use the throw keyword to manually throw an exception.",
+          "telugu": "throw keyword vadite manam manual ga exception create cheyyachu."
+        },
+        "keywords": ["throw", "manual exception"]
+      },
+      {
+        "q": "What is difference between checked and unchecked exceptions?",
+        "a": {
+          "normal": "Checked exceptions are checked at compile time, unchecked at runtime.",
+          "telugu": "Checked exceptions compile time lo check chestai, unchecked runtime lo vastayi."
+        },
+        "keywords": ["checked", "unchecked", "compile time", "runtime"]
+      }
+    ],
+    "File Handling": [
+      {
+        "q": "How to read a file in Java?",
+        "a": {
+          "normal": "Use FileReader or BufferedReader to read files.",
+          "telugu": "File ni read cheyyadaniki FileReader or BufferedReader use chestam."
+        },
+        "keywords": ["FileReader", "BufferedReader", "read"]
+      },
+      {
+        "q": "How to write to a file?",
+        "a": {
+          "normal": "Use FileWriter or BufferedWriter to write data into files.",
+          "telugu": "FileWriter or BufferedWriter tho file lo data rayachu."
+        },
+        "keywords": ["FileWriter", "BufferedWriter", "write"]
+      },
+      {
+        "q": "What package is needed for file handling?",
+        "a": {
+          "normal": "java.io package is used for file handling.",
+          "telugu": "File handling kosam java.io package vadali."
+        },
+        "keywords": ["java.io", "file handling"]
+      },
+      {
+        "q": "How to check if a file exists?",
+        "a": {
+          "normal": "Use the exists() method from the File class.",
+          "telugu": "File class lo exists() method tho check cheyyachu file unda leda ani."
+        },
+        "keywords": ["exists()", "File class"]
+      },
+      {
+        "q": "How to delete a file?",
+        "a": {
+          "normal": "Use delete() method from the File class.",
+          "telugu": "File ni delete cheyyadaniki File class lo delete() method vadali."
+        },
+        "keywords": ["delete()", "File class", "remove"]
+      }
+    ]
+  }
+}
+
