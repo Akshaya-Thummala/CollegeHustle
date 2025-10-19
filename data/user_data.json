@@ -1,25 +1,9 @@
 {
     "Akshaya": {
-        "xp": 110,
-        "badges": [
-            "Century XP"
-        ],
-        "streak": 1,
-        "last_login": "2025-10-16",
-        "quests_completed": []
-    },
-    "Sathvika": {
         "xp": 0,
         "badges": [],
         "streak": 0,
-        "last_login": "2025-06-01",
-        "quests_completed": []
-    },
-    "Shriya": {
-        "xp": 0,
-        "badges": [],
-        "streak": 0,
-        "last_login": "2025-06-01",
+        "last_login": "2025-10-18",
         "quests_completed": []
     }
 }

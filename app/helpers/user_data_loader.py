@@ -49,11 +49,15 @@ def add_xp(username, amount):
     else:
         print(f"Warning: User '{username}' not found when adding XP.")
 
-def add_badge(username,badge_name):
+def add_badge(username, badge):
+    """
+    badge: dict with keys 'name', 'icon', 'desc', 'earned_on'
+    """
     data = load_all_users()
     if username in data:
-        if badge_name not in data[username]["badges"]:
-            data[username]["badges"].append(badge_name)
+        existing_badge_names = [b['name'] if isinstance(b, dict) else str(b) for b in data[username]["badges"]]
+        if badge['name'] not in existing_badge_names:
+            data[username]["badges"].append(badge)
             save_all_users(data)
     else:
         print(f"Warning: User '{username}' not found while adding badge.")
@@ -63,16 +67,53 @@ def update_streak(username):
     if username not in data:
         print(f"Warning: User '{username}' not found when updating streak.")
         return
-    
-    today = datetime.today().date()
-    last_login = datetime.strptime(data[username]["last_login"], "%Y-%m-%d").date()
 
+    today = datetime.today().date()
+    
+    # Ensure 'last_login' exists
+    last_login_str = data[username].get("last_login", today.strftime("%Y-%m-%d"))
+    last_login = datetime.strptime(last_login_str, "%Y-%m-%d").date()
+    
+    # Ensure 'streak' exists
+    if "streak" not in data[username]:
+        data[username]["streak"] = 0
+
+    # --- Update streak logic ---
     if today == last_login:
-        return
+        pass  # already logged in today
     elif today == last_login + timedelta(days=1):
         data[username]["streak"] += 1
     else:
         data[username]["streak"] = 1
-    
+
+    # Update last_login
     data[username]["last_login"] = today.strftime("%Y-%m-%d")
     save_all_users(data)
+
+def load_user_data(username):
+    data = load_all_users()
+    if username not in data:
+        data = ensure_user_exists(username)
+    
+    user = data.get(username, {})
+
+    # Fix quests_completed if not a list
+    if not isinstance(user.get("quests_completed", []), list):
+        user["quests_completed"] = []
+
+    # Fix badges if any are strings (convert to dict with default icon)
+    fixed_badges = []
+    for b in user.get("badges", []):
+        if isinstance(b, str):
+            fixed_badges.append({
+                "name": b,
+                "icon": "🏅",   # default icon
+                "desc": "",
+                "earned_on": ""
+            })
+        else:
+            fixed_badges.append(b)
+    user["badges"] = fixed_badges
+
+    save_all_users(data)
+    return user

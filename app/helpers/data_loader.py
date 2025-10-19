@@ -2,13 +2,14 @@ import json
 
 def load_all_data():
     try:
-        with open("data/answers.json","r",encoding='utf-8') as f:
+        with open("data/answers.json", "r", encoding='utf-8') as f:
             data = json.load(f)
             return data
     except FileNotFoundError:
-        return {"File not found."}
+        return {"error": "File not found."}  # <-- use a dict, not a set
     except json.JSONDecodeError:
-        return {"Error reading JSON file."}
+        return {"error": "Error reading JSON file."}  # <-- use a dict, not a set
+
 
 def get_topic_content(subject,topic):
     try:

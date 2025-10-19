@@ -1,26 +1,4 @@
 {
-    "Programming for Problem Solving":{
-        "Algorithms and Flow Charts":[
-            {
-                "q":"What is the difference between an algorithm and a program?",
-                "a":{
-                    "normal":"An algorithm is a step-by-step, logical method used to solve a specific problem. It is written in simple language (often pseudocode) and is independent of any programming language. \n A program is the actual implementation of an algorithm using a programming language like C. It includes correct syntax, data types, and follows rules of the chosen language.",
-"telugu":"Algorithm ante problem ni step-by-step plan cheyyadam, plan vundali ra babu anipinche laga. Program ante a plan ni oka programming language lo rayadam, nenu cheesi chupistanu anna feel untundi. Algorithm lo manam logic ni clear ga set chestham, program lo adi real ga computer ki cheptam. So, algorithm ante mind lo plan, program ante action. Idi simple ga, plan tho matrame pani start avvadu!"
-                },
-                "keywords":["algorithm","plan","program","execution"]
-            },
-            {
-                "q":"Why use flowcharts when we can write code directly?",
-                "a":{
-                    "normal":"Flowcharts help in visually representing the logic of a problem clearly. Preparing a flowchart before coding makes the steps easier to understand and reduces errors. They simplify complex processes and provide a clear plan. Writing code without a flowchart can lead to confusion or mistakes. Therefore, flowcharts serve as an important planning tool before programming.",
-                    "telugu":"Flowcharts ante problem logic ni chakkaga chupinchadaniki, plan vundali ra babu laga help chestai. Code rayadam mundu flowchart tayaricheste, steps clear ga untai, “Idhi easy kada?” ani feel avutundi. Flowcharts tho process artham avvadaniki easy, leka pothe direct code rayadam lo “Ayyo, emi jarigindo?” anipistundi. So, flowcharts plan laga untayi, code ki manchi foundation ivvadani ki"
-                },
-                "keywords":["flowchart","flow chart", "flow charts","Logical steps","Visual representation","Planning tool","Process clarity","Error minimization"]
-            }
-        ]
-    }
-}
-{
   "C Programming": {
     "Basics": [
       {
@@ -232,9 +210,7 @@
         "keywords": ["malloc", "calloc", "free", "realloc"]
       }
     ]
-  }
-}
-{
+  },
   "Python": {
     "Basics": [
       {
@@ -446,9 +422,7 @@
         "keywords": ["pip", "package manager"]
       }
     ]
-  }
-}
-{
+  },
   "Java": {
     "Basics": [
       {

@@ -1,11 +1,14 @@
 import streamlit as st
 from ..style import load_styles
 from ..ui.components import styled_card
-from ..helpers.user_data_loader import load_all_users, save_all_users, add_xp, add_badge
+from ..helpers.user_data_loader import (
+    ensure_user_exists,
+    save_all_users,
+    add_xp,
+    add_badge,
+)
 
 # --- Pre-defined Quests ---
-# A list of dictionaries, where each dictionary represents a quest.
-# This can be easily expanded or moved to a separate JSON file later.
 AVAILABLE_QUESTS = [
     {
         "id": "solve_1_doubt",
@@ -46,19 +49,34 @@ def run_quest_mode():
     st.write("---")
 
     username = st.session_state.get("username", "Guest")
-    all_users = load_all_users()
-    user_data = all_users.get(username, {})
+    all_users = ensure_user_exists(username)
+    user_data = all_users[username]
+
+    # --- Fix badges format if stored as strings ---
+    if isinstance(user_data.get("badges", []), list) and user_data["badges"] and isinstance(user_data["badges"][0], str):
+        user_data["badges"] = [{"name": b, "icon": "🏅"} for b in user_data["badges"]]
+        save_all_users(all_users)
+
+    # --- Fix quests_completed if wrongly stored as non-list (e.g. 0) ---
+    if not isinstance(user_data.get("quests_completed", []), list):
+        user_data["quests_completed"] = []
+        save_all_users(all_users)
+
+
+    # Ensure completed_quests is always a list
     completed_quests = user_data.get("quests_completed", [])
-    
-    # Use columns for a cleaner, grid-like layout
+    if not isinstance(completed_quests, list):
+        completed_quests = []
+        user_data["quests_completed"] = completed_quests
+
+    # Columns for layout
     col1, col2 = st.columns(2)
     quest_columns = [col1, col2]
 
     for i, quest in enumerate(AVAILABLE_QUESTS):
         with quest_columns[i % 2]:
             is_completed = quest["id"] in completed_quests
-            
-            # Create a container for the card and button
+
             with st.container():
                 styled_card(
                     icon="✅" if is_completed else "🎯",
@@ -66,29 +84,41 @@ def run_quest_mode():
                     content=f"{quest['description']}<br><b>Reward: {quest['xp']} XP</b>"
                 )
 
+                # Use unique keys for buttons
                 if is_completed:
-                    st.button("Completed!", key=f"completed_{quest['id']}", disabled=True, use_container_width=True)
+                    st.button(
+                        "Completed!",
+                        key=f"completed_{quest['id']}_{i}",
+                        disabled=True,
+                        use_container_width=True
+                    )
                 else:
-                    if st.button(f"Claim Reward", key=quest['id'], use_container_width=True):
-                        # --- Logic to handle quest completion ---
+                    if st.button(
+                        "Claim Reward",
+                        key=f"claim_{quest['id']}_{i}",
+                        use_container_width=True
+                    ):
                         # 1. Add XP
-                        add_xp(username, quest['xp'])
-                        
+                        add_xp(username, quest["xp"])
+
                         # 2. Mark quest as completed
-                        user_data["quests_completed"].append(quest["id"])
-                        
-                        # 3. Award badge if there is one
+                        completed_quests.append(quest["id"])
+                        user_data["quests_completed"] = completed_quests
+
+                        # 3. Award badge
                         if "badge_reward" in quest:
-                            # Check if user already has the badge
-                            badge_names = [b['name'] for b in user_data.get("badges", [])]
-                            if quest["badge_reward"]["name"] not in badge_names:
+                            existing_badges = [b["name"] for b in user_data.get("badges", [])]
+                            if quest["badge_reward"]["name"] not in existing_badges:
                                 add_badge(username, quest["badge_reward"])
                                 st.balloons()
-                                st.toast(f"Badge Unlocked: {quest['badge_reward']['name']} {quest['badge_reward']['icon']}", icon="🏅")
+                                st.toast(
+                                    f"Badge Unlocked: {quest['badge_reward']['name']} {quest['badge_reward']['icon']}",
+                                    icon="🏅"
+                                )
 
-                        # 4. Save data and show feedback
+                        # 4. Save user data
                         save_all_users(all_users)
                         st.toast(f"+{quest['xp']} XP!", icon="⭐")
-                        st.rerun()
+                        st.rerun()  # Safe rerun after claiming reward
 
-            st.write("") # Vertical spacer between cards in the same column
+            st.write("")  # Vertical spacer

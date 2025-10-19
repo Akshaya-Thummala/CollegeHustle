@@ -35,7 +35,7 @@ def show():
 
     col1, col2 = st.columns([1, 2])
     with col1:
-        st.image("https://placehold.co/200x200/A8E6CF/373737?text=Avatar", caption=f"@{username}", use_column_width=True)
+        st.image("https://placehold.co/200x200/A8E6CF/373737?text=Avatar", caption=f"@{username}", use_container_width=True)
 
     with col2:
         st.subheader(f"Level {level} Hustler")
