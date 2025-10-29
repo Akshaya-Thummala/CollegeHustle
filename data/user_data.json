@@ -2,8 +2,53 @@
     "Akshaya": {
         "xp": 0,
         "badges": [],
+        "streak": 11,
+        "last_login": "2025-10-29",
+        "quests_completed": [],
+        "quest_progress": {
+            "c_loops": 3,
+            "py_datatypes": 3,
+            "1": 0,
+            "2": 0
+        },
+        "last_active": "2025-10-29",
+        "unlocked_features": []
+    },
+    "Sudhiksha": {
+        "xp": 0,
+        "badges": [],
+        "streak": 1,
+        "last_login": "2025-10-29",
+        "quests_completed": [
+            "solve_1_doubt",
+            "complete_5_quests"
+        ]
+    },
+    "Sahasra": {
+        "xp": 35,
+        "badges": [],
         "streak": 0,
-        "last_login": "2025-10-18",
-        "quests_completed": []
+        "last_login": "2025-10-29",
+        "quests_completed": [],
+        "quest_progress": {}
+    },
+    "Praseedha": {
+        "xp": 35,
+        "badges": [],
+        "streak": 0,
+        "last_login": "2025-10-29",
+        "quests_completed": [],
+        "quest_progress": {
+            "py_datatypes": 2
+        }
+    },
+    "Nakshatra": {
+        "xp": 0,
+        "badges": [],
+        "streak": 0,
+        "last_login": "2025-10-29",
+        "quests_completed": [],
+        "quest_progress": {},
+        "unlocked_features": []
     }
 }

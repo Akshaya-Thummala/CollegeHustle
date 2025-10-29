@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 from app.helpers.data_loader import get_topic_content, find_best_match, load_all_data
+from app.helpers.user_data_loader import update_streak
 
 def run_telugu_mode():
     st.markdown("<h4 style='color:#FFC107;'>🎭 Telugu - fun mode activated!</h4>", unsafe_allow_html=True)
@@ -31,6 +32,8 @@ def run_telugu_mode():
                         st.markdown(f"**Q: {best['q']}**")
                         st.divider()
                         st.markdown(f"👉{best['a']['telugu']}")
+                        # ✅ update streak because the user engaged today
+                        update_streak(st.session_state.get("username"))
                     else:
                         st.warning("Couldn't find a good match. Try rephrasing your doubt.")
                 else:
@@ -39,3 +42,5 @@ def run_telugu_mode():
                         st.markdown(f"**Q: {qa['q']}**")
                         st.markdown(f"👉{qa['a']['telugu']}")
                         st.divider()
+                        # ✅ update streak because the user engaged today
+                        update_streak(st.session_state.get("username"))
