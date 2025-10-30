@@ -1,5 +1,6 @@
+#main.py 
 import streamlit as st
-from app import home, profile, settings
+from app import home, profile, settings, about
 from app.helpers.user_data_loader import load_all_users
 from app.style import MINT_GREEN_DARK
 from app.login import login_page
@@ -12,6 +13,36 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.markdown("""
+    <style>
+    /* Sidebar container text (username, XP, streak, headings) */
+    section[data-testid="stSidebar"] * {
+        color: #ffffff !important;
+    }
+
+    /* Buttons - keep text dark + mint background */
+    section[data-testid="stSidebar"] button {
+        background-color: #A8E6CF !important;
+        color: #000000 !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        border: 1px solid rgba(0,0,0,0.1) !important;
+    }
+
+    /* Button text specifically (sometimes nested spans override style) */
+    section[data-testid="stSidebar"] button * {
+        color: #000000 !important;
+    }
+
+    /* Navigation header spacing adjustments */
+    section[data-testid="stSidebar"] h1, 
+    section[data-testid="stSidebar"] h2, 
+    section[data-testid="stSidebar"] h3 {
+        color: #ffffff !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # --- Initialize login state ---
 if "logged_in" not in st.session_state:
     st.session_state["logged_in"] = False
@@ -22,6 +53,38 @@ if not st.session_state["logged_in"]:
 else:
     # --- Sidebar ---
     with st.sidebar:
+
+        st.markdown("""
+            <style>
+            /* Make all sidebar text brighter */
+            [data-testid="stSidebar"] * {
+                color: #f5fff5 !important;
+            }
+
+            /* But keep buttons readable on hover */
+            [data-testid="baseButton-secondary"] {
+                color: #002b18 !important;
+                font-weight: 600 !important;
+            }
+
+            /* Sidebar section headers */
+            [data-testid="stSidebar"] h1, 
+            [data-testid="stSidebar"] h2, 
+            [data-testid="stSidebar"] h3, 
+            [data-testid="stSidebar"] h4 {
+                color: #ffffff !important;
+            }
+
+            /* Metrics (XP / Streak) */
+            [data-testid="stMetricValue"] {
+                color: #ffffff !important;
+            }
+            [data-testid="stMetricLabel"] {
+                color: #dfe8df !important;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+
         # 1. App Logo and Title
         st.markdown(
             f"""
@@ -38,7 +101,7 @@ else:
         all_users = load_all_users()
         user_data = all_users.get(username, {"xp": 0, "streak": 0})
 
-        st.image("https://placehold.co/100x100/A8E6CF/373737?text=🧑‍🎓", use_container_width=False)
+        st.image(f"https://cdn-icons-png.flaticon.com/512/924/924915.png", use_container_width=False)
         st.subheader(f"@{username}")
 
         stat_col1, stat_col2 = st.columns(2)
@@ -59,6 +122,9 @@ else:
 
         if st.button("👤 Profile", use_container_width=True):
             st.session_state.page = "👤 Profile"
+        
+        if st.button("📖 About", use_container_width=True):
+            st.session_state.page = "📖 About"
 
         if st.button("⚙️ Settings", use_container_width=True):
             st.session_state.page = "⚙️ Settings"
@@ -69,7 +135,7 @@ else:
         st.markdown("""
         <div style="text-align: center; color: #888;">
             <small>CollegeHustle | Your Study Wingman</small><br>
-            <small>Made for the Expo with ❤️</small>
+            <small>Made with ❤️</small>
         </div>
         """, unsafe_allow_html=True)
 
@@ -77,7 +143,8 @@ else:
     pages = {
         "🏠 Home": home.show,
         "👤 Profile": profile.show,
-        "⚙️ Settings": settings.show
+        "⚙️ Settings": settings.show,
+        "📖 About": about.show,
     }
 
     page_function = pages.get(st.session_state.page, home.show)

@@ -1,54 +1,107 @@
 {
     "Akshaya": {
-        "xp": 0,
+        "xp": 120,
         "badges": [],
-        "streak": 11,
-        "last_login": "2025-10-29",
-        "quests_completed": [],
+        "streak": 12,
+        "last_login": "2025-10-30",
+        "quests_completed": [
+            "1",
+            "2"
+        ],
         "quest_progress": {
             "c_loops": 3,
             "py_datatypes": 3,
-            "1": 0,
-            "2": 0
+            "1": 10,
+            "2": 10
         },
         "last_active": "2025-10-29",
-        "unlocked_features": []
+        "unlocked_features": [],
+        "milestones_claimed": []
     },
     "Sudhiksha": {
-        "xp": 0,
+        "xp": 90,
         "badges": [],
-        "streak": 1,
-        "last_login": "2025-10-29",
+        "streak": 2,
+        "last_login": "2025-10-30",
         "quests_completed": [
             "solve_1_doubt",
-            "complete_5_quests"
-        ]
+            "complete_5_quests",
+            "1",
+            "2"
+        ],
+        "quest_progress": {
+            "1": 10,
+            "2": 20
+        },
+        "unlocked_features": [],
+        "milestones_claimed": []
     },
     "Sahasra": {
-        "xp": 35,
+        "xp": 80,
         "badges": [],
-        "streak": 0,
-        "last_login": "2025-10-29",
-        "quests_completed": [],
-        "quest_progress": {}
+        "streak": 1,
+        "last_login": "2025-10-30",
+        "quests_completed": [
+            "1"
+        ],
+        "quest_progress": {
+            "1": 10
+        },
+        "unlocked_features": [],
+        "milestones_claimed": []
     },
     "Praseedha": {
         "xp": 35,
         "badges": [],
-        "streak": 0,
-        "last_login": "2025-10-29",
+        "streak": 1,
+        "last_login": "2025-10-30",
         "quests_completed": [],
         "quest_progress": {
             "py_datatypes": 2
-        }
+        },
+        "unlocked_features": [],
+        "milestones_claimed": []
     },
     "Nakshatra": {
-        "xp": 0,
+        "xp": 53,
+        "badges": [],
+        "streak": 1,
+        "last_login": "2025-10-30",
+        "quests_completed": [
+            "1"
+        ],
+        "quest_progress": {
+            "1": 10
+        },
+        "unlocked_features": [],
+        "milestones_claimed": []
+    },
+    "Shriya": {
+        "xp": 153,
         "badges": [],
         "streak": 0,
-        "last_login": "2025-10-29",
+        "last_login": "2025-10-30",
+        "quests_completed": [
+            "1",
+            "2",
+            "3"
+        ],
+        "quest_progress": {
+            "1": 10,
+            "2": 10,
+            "3": 10
+        },
+        "unlocked_features": [],
+        "milestones_claimed": []
+    },
+    "Sudeep": {
+        "xp": 60,
+        "badges": [],
+        "streak": 0,
+        "last_login": "2025-10-30",
         "quests_completed": [],
         "quest_progress": {},
-        "unlocked_features": []
+        "unlocked_features": [],
+        "milestones_claimed": []
     }
 }

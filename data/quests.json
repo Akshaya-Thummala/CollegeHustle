@@ -13,8 +13,8 @@
         "hint": "It can vary based on system architecture."
       },
       {
-        "q": "Which symbol is used for comments in C?",
-        "options": ["//", "/* */", "#", "<!-- -->"],
+        "q": "Which symbol is used for block comments in C?",
+        "options": ["//", "/* */", "<!-- -->", "None of the above"],
         "answer": "/* */",
         "hint": "Block comments use /* */"
       },
@@ -88,7 +88,7 @@
         "hint": "Signature: public static void main(String[] args)"
       },
       {
-        "q": "Which operator is used for comparison?",
+        "q": "Which operator is used for comparison of equality?",
         "options": ["=", "==", "!=", "<>"],
         "answer": "==",
         "hint": "Single = is assignment."
@@ -176,7 +176,7 @@
       },
       {
         "q": "How do you start a comment in Python?",
-        "options": ["//", "#", "/*", "<!--"],
+        "options": ["//", "\\#", "/*", "<!--"],
         "answer": "#",
         "hint": "Single-line comment uses #."
       },
@@ -189,7 +189,7 @@
       {
         "q": "Which keyword is used for exception handling?",
         "options": ["try", "catch", "handle", "except"],
-        "answer": "try",
+        "answer": "except",
         "hint": "Followed by except block."
       },
       {
