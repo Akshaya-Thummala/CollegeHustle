@@ -183,4 +183,31 @@ def show():
         </div>
         """, unsafe_allow_html=True)
 
+    # --- Show current user rank even if not in top 5 ---
+    usernames_only = [u for u, _ in leaderboard]
+    if username in usernames_only:
+        user_rank = usernames_only.index(username) + 1
+
+        if user_rank > 5:  # not in top 5, show separately
+            st.markdown("<br>", unsafe_allow_html=True)
+            st.markdown("**— You —**")
+
+            user_xp = leaderboard[user_rank - 1][1].get('xp', 0)
+            st.markdown(f"""
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: #A8E6CF;
+                color: #373737;
+                margin-bottom: 8px;
+                border: 1px solid #E5E7EB;
+            ">
+                <span style="font-weight: 600; font-size: 1.1rem;">#{user_rank} &nbsp; @{username}</span>
+                <span style="font-weight: 600; font-size: 1.1rem;">{user_xp} XP</span>
+            </div>
+            """, unsafe_allow_html=True)
+
     st.write("")  # final spacing

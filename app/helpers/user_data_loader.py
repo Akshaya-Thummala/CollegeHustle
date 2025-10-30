@@ -37,7 +37,7 @@ def ensure_user_exists(username):
         data[username] = {
             "xp": 0,
             "badges": [],
-            "streak": 0,
+            "streak": 1,
             "last_login": datetime.today().strftime("%Y-%m-%d"),
             "quests_completed": [],
             "quest_progress": {},

@@ -1,6 +1,6 @@
 {
     "Akshaya": {
-        "xp": 120,
+        "xp": 121,
         "badges": [],
         "streak": 12,
         "last_login": "2025-10-30",
@@ -98,6 +98,16 @@
         "xp": 60,
         "badges": [],
         "streak": 0,
+        "last_login": "2025-10-30",
+        "quests_completed": [],
+        "quest_progress": {},
+        "unlocked_features": [],
+        "milestones_claimed": []
+    },
+    "Pallavi": {
+        "xp": 0,
+        "badges": [],
+        "streak": 1,
         "last_login": "2025-10-30",
         "quests_completed": [],
         "quest_progress": {},
